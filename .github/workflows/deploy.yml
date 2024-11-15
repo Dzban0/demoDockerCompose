@@ -3,11 +3,10 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # Zmień na wybraną gałąź
+      - main  
   pull_request:
     branches:
-      - main  # Zmień na wybraną gałąź
-
+      - main  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,16 +18,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'  # Zmień na odpowiednią wersję Node.js
+          node-version: '14'  
 
       - name: Install dependencies
         run: npm install
 
       - name: Build the application
-        run: npm run build  # Zmień na odpowiednią komendę budowania
+        run: npm run build  
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build  # Zmień na odpowiednią ścieżkę do folderu zbudowanej aplikacji
+          publish_dir: ./build  

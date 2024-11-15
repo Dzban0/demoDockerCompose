@@ -3,10 +3,10 @@ name: Docker Build Check
 on:
   push:
     branches:
-      - main  # Zmień na wybraną gałąź
+      - main
   pull_request:
     branches:
-      - main  # Zmień na wybraną gałąź
+      - main
 
 jobs:
   build:
