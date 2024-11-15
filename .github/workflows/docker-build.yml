@@ -1,0 +1,29 @@
+name: Docker Build Check
+
+on:
+  push:
+    branches:
+      - main  # Zmień na wybraną gałąź
+  pull_request:
+    branches:
+      - main  # Zmień na wybraną gałąź
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build Docker image
+        run: |
+          docker build -t my-app .
+
+      - name: Run tests
+        run: |
+          # Dodaj komendy do uruchomienia testów, jeśli masz takie
+          echo "Run your tests here"
