@@ -21,9 +21,4 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t my-app .
-
-      - name: Run tests
-        run: |
-          # Dodaj komendy do uruchomienia testów, jeśli masz takie
-          echo "Run your tests here"
+          docker build . --file Dockerfile --tag my-image-name:$(date +%s)
